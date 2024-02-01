@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymyleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Student List</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Guardian name</th>
+        <th>Guardian email</th>
+        <th>Guardian mobile</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th.text="${student}"></td>
+        <td th:text="${student.studentId}">123</td>
+        <td th:text="${student.firstName}"> Spring in Action</td>
+        <td th:text="${student.lastName}">Wrox</td>
+        <td th:text="${student.emailId}">Wrox</td>
+        <td th:text="${student.guardian?.name}">Wrox</td>
+        <td th:text="${student.guardian?.email}">Wrox</td>
+        <td th:text="${student.guardian?.mobile}">Wrox</td>
+    </tr>
+</table>
+</body>
+</html>

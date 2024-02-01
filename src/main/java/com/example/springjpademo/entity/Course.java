@@ -45,11 +45,13 @@ public class Course {
     private CourseMaterial courseMaterial;
 
     @ManyToOne(
-        cascade = CascadeType.ALL
+        cascade = CascadeType.ALL,
+        optional = false
     )
     @JoinColumn(
         name = "teacher_id",
-        referencedColumnName = "teacherId"
+        referencedColumnName = "teacherId",
+        nullable = false
     )
     private Teacher teacher;
 
